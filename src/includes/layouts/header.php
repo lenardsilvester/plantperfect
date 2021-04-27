@@ -31,28 +31,28 @@
     </span>
     <nav>
       <ul class="nav-links">
-
         <li>
           <a class="left" href="index.php#catalog">
-            catalog.
+            catalog
           </a>
         </li>
 
         <li>
           <a class="left" href="contact.php">
-            contact.
+            contact
           </a>
         </li>
 
         <li>
           <a class="left" href="login.php">
-            login.
+            login
           </a>
         </li>
-
+        <li>
+          <a class="left" href="login.php">
+            <i class="bi bi-cart4"></i>
+          </a>
+        </li>
       </ul>
     </nav>
-    <a href="#">
-      <i class="bi bi-cart4"></i>
-    </a>
   </header>
