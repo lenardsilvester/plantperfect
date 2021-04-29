@@ -1,155 +1,39 @@
+<?php
+require_once 'includes/dbh.inc.php';
+
+$sql = "SELECT * FROM plants;";
+$result = mysqli_query($conn, $sql);
+?>
 
 <div id="catalog" class="item-container">
 
-  <div class="item-column">
-    <div class="item-cards">
-      <div class="item-content">
+<?php
+foreach ($result as $results) {
+  echo '
+    <div class="item-column">
+      <div class="item-cards">
+        <div class="item-content">
 
-        <h4>
-          Zamioculcas.
-        </h4>
+          <h4>'
+            . $results['plant_name'] . '
+          </h4>
 
-        <p>
-          • Doesn't need much water. <br />
-          • Needs alot of light. <br />
-          • Lighty purifies the air.
-        </p>
+          <p>'
+          . $results['plant_bio'] . '
+          </p>
 
-        <br /><br />
-        <img class="content-image" src="assets\image\plant1.png" alt="yucca plant">
+          <br /><br />
+          <img class="content-image" src="assets\image\plant'. $results['plant_id'] .'.png" alt="' . $results['plant_name'] . '">
 
-        <a class="btn" href="#">
-          Learn more.
-        </a>
+          <a class="btn" href="item?plant='. $results['plant_id'] .'">
+            Learn more.
+          </a>
 
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <div class="item-column">
-    <div class="item-cards">
-      <div class="item-content">
-
-        <h4>
-          Dracaena Marginata.
-        </h4>
-
-        <p>
-          • Doesn't need much water. <br />
-          • Doesn't need alot of light. <br />
-          • Strongly purifies the air.
-        </p>
-
-        <br /><br />
-        <img class="content-image" src="assets\image\plant2.png" alt="yucca plant">
-
-        <a class="btn" href="#">
-          Learn more.
-        </a>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="item-column">
-    <div class="item-cards">
-      <div class="item-content">
-
-        <h4>
-          Yucca.
-        </h4>
-
-        <p>
-          • Doesn't need much water. <br />
-          • Needs alot of light. <br />
-          • Purifies the air.
-        </p>
-
-        <br /><br />
-        <img class="content-image" src="assets\image\plant3.png" alt="yucca plant">
-
-
-        <a class="btn" href="#">
-          Learn more.
-        </a>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="item-column">
-    <div class="item-cards">
-      <div class="item-content">
-
-        <h4>
-          Dracaena Janet Lind.
-        </h4>
-
-        <p>
-          • Doesn't need much water. <br />
-          • Doesn't need alot of light. <br />
-          • Strongly purifies the air.
-        </p>
-
-        <br /><br />
-        <img class="content-image" src="assets\image\plant4.png" alt="yucca plant">
-
-        <a class="btn" href="#">
-          Learn more.
-        </a>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="item-column">
-    <div class="item-cards">
-      <div class="item-content">
-
-        <h4>
-          Alocasia Zebrina.
-        </h4>
-
-        <p>
-          • Needs alot of water. <br />
-          • Doesn't need alot of light. <br />
-          • Purifies the air.
-        </p>
-
-        <br /><br />
-        <img class="content-image" src="assets\image\plant5.png" alt="yucca plant">
-
-        <a class="btn" href="#">
-          Learn more.
-        </a>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="item-column">
-    <div class="item-cards">
-      <div class="item-content">
-
-        <h4>
-          Strelitzia nicolai.
-        </h4>
-
-        <p>
-          • Needs alot of water. <br />
-          • Needs alot of light. <br />
-          • Lighty purifies the air.
-        </p>
-
-        <br /><br />
-        <img class="content-image" src="assets\image\plant6.png" alt="yucca plant">
-
-        <a class="btn" href="#">
-          Learn more.
-        </a>
-
-      </div>
-    </div>
-  </div>
+      ';
+};
+?>
 
 </div>
