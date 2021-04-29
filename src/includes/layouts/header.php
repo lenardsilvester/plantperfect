@@ -23,10 +23,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet" />
 
   </head>
+<body>
   <header>
 
     <span class="logo">
-      <a href="index.php">
+      <a href="index">
         plantperfect.
       </a>
     </span>
@@ -35,25 +36,19 @@
       <ul class="nav-links">
 
         <li>
-          <a class="left" href="index.php#catalog">
+          <a class="left" href="index#catalog">
             catalog
           </a>
         </li>
 
         <li>
-          <a class="left" href="contact.php">
-            contact
-          </a>
-        </li>
-
-        <li>
-          <a class="left" href="login.php">
+          <a class="left" href="login">
             login
           </a>
         </li>
 
         <li>
-          <a class="left" href="login.php">
+          <a class="left" href="cart">
             <i class="bi bi-cart"></i>
           </a>
         </li>

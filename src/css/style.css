@@ -13,9 +13,19 @@
   background-color: var(--standard-bg-color);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 p, h4, h5, h6{
   font-family: var(--font-family);
-  background-color: inherit;
+  background-color: transparent;
 }
 
 span {
@@ -30,6 +40,10 @@ header a {
   color: var(--text-color);
 }
 
+.bi {
+  background-color: transparent;
+}
+
 /* ----- navbar ----- */
 
 header {
@@ -37,7 +51,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  z-index: 2;
 }
 
 .nav-links {
@@ -48,6 +61,27 @@ header {
 .nav-links li {
   display: inline-block;
   padding: 0px 20px;
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--text-color);
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-links a:hover:before {
+  visibility: visible;
+  width: 100%;
 }
 
 /* ------------------ */
@@ -117,18 +151,6 @@ header {
   text-align: right;
 }
 
-.btn {
-  font-family: var(--font-family);
-  font-size: 16px;
-  padding: 9px 25px;
-  text-decoration: none;
-  background-color: var(--standard-bg-color);
-  color: var(--text-color);
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease 0s;
-}
-
 /* ------------------ */
 
 /* --- item-cards --- */
@@ -139,7 +161,14 @@ header {
   grid-template-rows: 1fr;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1600px) {
+  .item-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
   .item-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -158,7 +187,7 @@ header {
   height: 100%;
   width: 75%;
   padding: 10px;
-  margin: 20px;
+  margin: 25px;
   background-color: var(--secondary-bg-color);
   display: flex;
   align-items: center;
@@ -181,8 +210,103 @@ header {
 
 /* ------------------ */
 
+/* ----- buttons ---- */
+
+.btn {
+  font-family: var(--font-family);
+  font-size: 16px;
+  padding: 9px 25px;
+  text-decoration: none;
+  background-color: var(--standard-bg-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease 0s;
+}
+
 .btn:hover {
   font-size: 18px;
   background-color: var(--text-color);
   color: var(--standard-bg-color);
 }
+
+/* ------------------ */
+
+/* - login / signup - */
+
+.login-container {
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container .login-form {
+  background-color: var(--secondary-bg-color);
+  padding: 20px;
+  text-align: center;
+}
+
+.login-container .login-form .register-link {
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+.login-container .login-form form {
+  background-color: var(--secondary-bg-color);
+}
+
+.login-container .login-form p {
+  font-size: 15px;
+}
+
+.login-container .login-form input {
+  font-family: var(--font-family);
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--secondary-bg-color);
+  margin: 20px;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+  outline: none;
+}
+
+/* ------------------ */
+
+/* ------ cart ------ */
+
+.cart-container {
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-container .cart-content {
+  background-color: var(--secondary-bg-color);
+  height: 100%;
+  width: 75%;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ------------------ */
+
+/* ----- footer ----- */
+
+.footer {
+  color: var(--text-color);
+  text-align: center;
+  background-color: var(--secondary-bg-color);
+  margin-top: auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.footer a {
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+/* ------------------ */

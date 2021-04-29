@@ -1,3 +1,7 @@
+<?php
+require "includes/layouts/header.php";
+?>
+
 <div class="container">
 
   <div class="column">
@@ -15,7 +19,7 @@
           <br /><br />
           <img class="content-image" src="assets\image\plant3.png" alt="yucca plant">
 
-          <a class="btn" href="#">
+          <a class="btn" href="#catalog">
             Start shopping.
           </a>
 
@@ -37,7 +41,7 @@
 
         <br /><br />
 
-        <a class="btn" href="#">
+        <a class="btn" href="#catalog">
           Check our catalog.
         </a>
 
@@ -45,3 +49,27 @@
     </div>
   </div>
 </div>
+
+<br /><br />
+<br /><br />
+<br /><br />
+
+<header>
+  <span class="logo">
+    <a href="index#catalog">
+      Check out our plants!
+    </a>
+  </span>
+</header>
+
+<?php
+require "includes/layouts/catalog.php";
+?>
+
+<br /><br />
+<br /><br />
+<br /><br />
+
+<?php
+require "includes/layouts/footer.php";
+?>
