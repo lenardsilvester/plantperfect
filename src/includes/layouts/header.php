@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION)) {
+  session_start();
+}
+?>
 <!DOCTYPE HTML>
 <html lang="nl">
   <head>
@@ -41,11 +46,22 @@
           </a>
         </li>
 
-        <li>
-          <a class="left" href="login">
-            login
-          </a>
-        </li>
+        <?php
+        if (isset($_SESSION['user-uid'])) {
+            echo '<li>
+              <a class="left" href="includes/logout.inc">
+                logout
+              </a>
+            </li>';
+        }
+        else {
+            echo '<li>
+              <a class="left" href="login">
+                login
+              </a>
+            </li>';
+        }
+        ?>
 
         <li>
           <a class="left" href="cart">

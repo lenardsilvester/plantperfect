@@ -8,16 +8,25 @@ require "includes/layouts/header.php";
     <div class="cards">
       <div class="content-card-one">
 
-        <h4>
-          Welcome to plantperfect.
-        </h4>
+        <?php
+        if (isset($_SESSION['user-uid'])) {
+            echo '<h4>
+              Welcome back <i class="bi bi-person-fill"></i> '. $_SESSION['user-uid'] .'.
+            </h4>';
+        }
+        else {
+            echo '<h4>
+              Welcome to plantperfect.
+            </h4>';
+        }
+        ?>
 
         <p>
           Find plants that are best suited <br />for you.
         </p>
 
           <br /><br />
-          <img class="content-image" src="assets\image\plant3.png" alt="yucca plant">
+          <img class="content-image" src="assets\image\plant3.png" alt="Yucca.">
 
           <a class="btn" href="#catalog">
             Start shopping.
@@ -36,7 +45,8 @@ require "includes/layouts/header.php";
         </h4>
 
         <p>
-          we at plantperfect want to make living rooms and offices literally green with the most beautiful plants. We ourselves try to contribute by making our processes as sustainable as possible.
+          we at plantperfect want to make living rooms and offices literally green with the most beautiful plants.
+          We ourselves try to contribute by making our processes as sustainable as possible.
         </p>
 
         <br /><br />

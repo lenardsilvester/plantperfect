@@ -14,25 +14,45 @@ foreach ($result as $results) {
       <div class="item-cards">
         <div class="item-content">
 
-          <h4>'
-            . $results['plant_name'] . '
+          <h4>
+          ' . $results['plant_name'] . '
           </h4>
 
-          <p>'
-          . $results['plant_bio'] . '
+          <p>
+          ' . $results['plant_bio'] . '
           </p>
 
-          <br /><br />
-          <img class="content-image" src="assets\image\plant'. $results['plant_id'] .'.png" alt="' . $results['plant_name'] . '">
+          <br />
+          <img class="content-image" src="assets\image\plant'. $results['plant_id'] .'.png" alt="' . $results['plant_name'] . '">';
 
-          <a class="btn" href="item?plant='. $results['plant_id'] .'">
-            Learn more.
-          </a>
+          if (isset($_SESSION['user-id'])) {
+          echo '
+          <form id="' . $results['plant_id'] . '" action="includes\add-to-cart.inc" method="post">
+
+          <input type="hidden" name="user-id" value="'  . $_SESSION["user-id"] . '" />
+          <input type="hidden" name="hidden_name" value="'  . $results['plant_name'] . '" />
+          <input type="hidden" name="hidden_price" value="'  . $results['plant_price'] . '" />
+
+          <button class="btn" form="'. $results['plant_id'] . '" type="submit" name="submit">
+            Add to cart. &#8364; ' . $results['plant_price'] . '
+          </button>
+
+          </form>
 
           </div>
         </div>
+      </div>' . "\n";
+
+    } else {
+      echo '
+      <a class="btn" href="login">
+        Add to cart. &#8364;' . $results['plant_price'] .'
+      </a>
+
       </div>
-      ';
+    </div>
+  </div>';
+    }
 };
 ?>
 

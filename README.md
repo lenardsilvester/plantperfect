@@ -1,6 +1,16 @@
-## plantperfect
+# plantperfect.
 
-### dbh.inc.php
+plantperfect is a project to put me to the test. I tried to make a website that has all the functions a E-Commerce website has.
+I also tried to challenge myself with the styling.
+
+## A list of things that i need to fix.
+
+- Mobile support for images. (Proper scaling.)
+- Better security.
+
+## Database connection.
+
+dbh.inc.php
 
 ``` php
 $serverName = "";
@@ -15,4 +25,6 @@ if (!$conn) {
 }
 ```
 
-https://drawsql.app/lenardsilvester/diagrams/plantperfect-1/embed
+## Visit the website.
+
+[plantperfect](https://lenardsilvester.nl/plantperfect/)

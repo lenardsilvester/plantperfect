@@ -11,12 +11,42 @@ require "includes/layouts/header.php";
 
     <br />
 
-    <form class="" action="index.html" method="post">
+    <?php
+    if (isset($_GET["error"])) {
+
+        if ($_GET["error"] == "none") {
+            echo '
+            <p>
+              Your account was successfully created.
+            </p>';
+        }
+
+        if ($_GET["error"] == "wronglogin") {
+            echo '
+            <p style="color: red;">
+              Your credenials dont match.
+            </p>';
+        }
+
+        if ($_GET["error"] == "wrongpassword") {
+            echo '
+            <p style="color: red;">
+              Your password is not correct try again.
+            </p>';
+        }
+
+    }
+    ?>
+
+    <br />
+
+    <form id="login" action="includes/login.inc" method="post">
+
       <p>Email</p>
-      <input type="email" name="" value="" placeholder="Your email">
+      <input type="email" name="email" placeholder="Your email">
 
       <p>Password</p>
-      <input type="password" name="" value="" placeholder="Your password.">
+      <input type="password" name="psw" placeholder="Your password.">
 
       <p>
         Dont have an account?<br />
@@ -26,7 +56,7 @@ require "includes/layouts/header.php";
       <br />
       <br />
 
-      <button class="btn" type="button" name="button">
+      <button form="login" class="btn" type="submit" name="submit">
         Login.
       </button>
 

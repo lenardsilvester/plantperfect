@@ -193,6 +193,10 @@ header {
   align-items: center;
 }
 
+.item-column .item-cards form {
+  background-color: var(--secondary-bg-color);
+}
+
 .item-column .item-cards .item-content {
   background-color: transparent;
   padding: 20px;
@@ -206,6 +210,17 @@ header {
   right: 10px;
   width: 320px;
   background-color: transparent;
+}
+
+/* temporary image fix */
+@media only screen and (max-width: 600px) {
+  .item-column .item-cards .item-content .content-image {
+    position: absolute;
+    top: -75px;
+    right: 10px;
+    width: 0px;
+    background-color: transparent;
+  }
 }
 
 /* ------------------ */
@@ -226,6 +241,24 @@ header {
 
 .btn:hover {
   font-size: 18px;
+  background-color: var(--text-color);
+  color: var(--standard-bg-color);
+}
+
+.delete-btn {
+  font-family: var(--font-family);
+  font-size: 14px;
+  padding: 9px 25px;
+  text-decoration: none;
+  background-color: var(--standard-bg-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease 0s;
+}
+
+.delete-btn:hover {
+  font-size: 16px;
   background-color: var(--text-color);
   color: var(--standard-bg-color);
 }
@@ -289,6 +322,37 @@ header {
   margin: 20px;
   padding: 20px;
   text-align: center;
+}
+
+.cart-container .cart-content .table-btn {
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+.cart-container .cart-content table {
+  background-color: var(--secondary-bg-color);
+  font-family: var(--font-family);
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-container .cart-content tbody {
+  background-color: var(--secondary-bg-color);
+}
+
+.cart-container .cart-content tr {
+  background-color: var(--secondary-bg-color);
+}
+
+.cart-container .cart-content th {
+  background-color: var(--secondary-bg-color);
+}
+
+.cart-container .cart-content td {
+  background-color: var(--secondary-bg-color);
+  padding:10px;
 }
 
 /* ------------------ */
