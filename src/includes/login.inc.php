@@ -12,4 +12,5 @@ if (isset($_POST["submit"])) {
 } else {
     header("location: ../login");
     exit();
+    
 }

@@ -4,8 +4,8 @@ require_once 'functions.inc.php';
 
 if (isset($_POST["submit"])) {
 
-  $cartid = $_POST["cart-id"];
-  $conn->query('DELETE FROM cart WHERE cart . cart_id = \'' . $cartid . ' \';');
+  $cartId = $_POST["cart-id"];
+  $conn->query('DELETE FROM cart WHERE cart . cart_id = \'' . $cartId . ' \';');
 
   header("location: ../cart");
 

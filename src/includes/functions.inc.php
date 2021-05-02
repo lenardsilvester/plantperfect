@@ -1,7 +1,5 @@
 <?php
-
 $result = '';
-
 
  function invalidUid($username) {
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
@@ -104,17 +102,17 @@ function loginUser($conn, $email, $pwd) {
 
     }
 
-    function createOrder ($conn, $userid, $item, $price) {
-      $sql = "INSERT INTO cart (user_id, plant_name, plant_price) VALUES (?, ?, ?);";
-      $stmt = mysqli_stmt_init($conn);
-      if (!mysqli_stmt_prepare($stmt, $sql)) {
-          header("location: ../home?error=stmtfailed");
-          exit();
-      }
+function createOrder ($conn, $userId, $item, $price) {
+  $sql = "INSERT INTO cart (user_id, plant_name, plant_price) VALUES (?, ?, ?);";
+  $stmt = mysqli_stmt_init($conn);
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../home?error=stmtfailed");
+    exit();
+  }
 
-      mysqli_stmt_bind_param($stmt, "sss", $userid, $item, $price);
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_close($stmt);
-      header ("location: ../cart");
-      exit();
-    }
+  mysqli_stmt_bind_param($stmt, "sss", $userId, $item, $price);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+  header ("location: ../cart");
+  exit();
+}

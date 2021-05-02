@@ -29,6 +29,7 @@ require "includes/login-check.inc.php";
       </tr>';
     }
 
+
     foreach ($result as $results) {
       echo '
       <tr>
@@ -58,7 +59,6 @@ require "includes/login-check.inc.php";
       <a class="btn" href="home">
         Go back to shopping.
       </a>';
-
     } else {
       echo '
       <a class="btn" href="home">

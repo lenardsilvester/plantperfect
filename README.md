@@ -1,11 +1,11 @@
 # plantperfect.
 
-plantperfect is a project to put me to the test. I tried to make a website that has all the functions a E-Commerce website has.
+plantperfect is a project to put me to the test. I tried to make a website that has all the functions a e-commerce website has.
 I also tried to challenge myself with the styling.
 
 ## A list of things that i need to fix.
 
-- Mobile support for images. (Proper scaling.)
+- Better mobile support (Hamburger menu, proper image scaling and proper text scaling).
 - Better security.
 
 ## Database connection.
