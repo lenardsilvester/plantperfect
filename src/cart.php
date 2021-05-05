@@ -1,6 +1,6 @@
 <?php
 require "includes/layouts/header.php";
-require "includes/login-check.inc.php";
+loginCheck();
 ?>
 
 <div class="cart-container">
@@ -10,8 +10,6 @@ require "includes/login-check.inc.php";
     <table>
 
     <?php
-    require_once 'includes/dbh.inc.php';
-
     $sql = 'SELECT * FROM cart WHERE user_id = \'' . $_SESSION["user-id"] . ' \';';
     $result = mysqli_query($conn, $sql);
 
@@ -56,7 +54,7 @@ require "includes/login-check.inc.php";
     <?php
     if (mysqli_num_rows($result) == 0) {
       echo '
-      <a class="btn" href="home">
+      <a class="btn" href="#catalog">
         Go back to shopping.
       </a>';
     } else {
@@ -69,24 +67,15 @@ require "includes/login-check.inc.php";
   </div>
 </div>
 
-<br /><br />
-
 <header>
   <span class="logo">
-    <a href="index#catalog">
-      Maybe check out some more  of our plants.
+    <a href="#catalog">
+      Maybe check out some more of our plants.
     </a>
   </span>
 </header>
 
 <?php
 require "includes/layouts/catalog.php";
-?>
-
-<br /><br />
-<br /><br />
-<br /><br />
-
-<?php
 require "includes/layouts/footer.php";
 ?>

@@ -1,6 +1,6 @@
 <?php
-// - plantperfect v1.0.
-// - © lenardsilvester 2021.
+// -- plantperfect v1.1.
+// -- © lenardsilvester.
 
 header ("location: home");
 ?>

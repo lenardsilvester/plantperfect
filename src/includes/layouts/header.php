@@ -2,6 +2,9 @@
 if(!isset($_SESSION)) {
   session_start();
 }
+
+require_once 'includes/dbh.inc.php';
+require_once 'includes/functions.inc.php';
 ?>
 <!DOCTYPE HTML>
 <html lang="nl">
@@ -12,6 +15,7 @@ if(!isset($_SESSION)) {
     <meta charset="UTF-8">
     <meta name="author" content="lenardsilvester">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c0e6ba">
     <meta property="og:site_name" content="plantperfect" />
     <meta property="og:title" content="plantperfect webshop." />
     <meta property="og:url" content="https://lenardsilvester.nl/" />

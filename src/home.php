@@ -46,7 +46,6 @@ require "includes/layouts/header.php";
 
         <p>
           we at plantperfect want to make living rooms and offices literally green with the most beautiful plants.
-          We ourselves try to contribute by making our processes as sustainable as possible.
         </p>
 
         <br /><br />
@@ -60,13 +59,9 @@ require "includes/layouts/header.php";
   </div>
 </div>
 
-<br /><br />
-<br /><br />
-<br /><br />
-
 <header>
   <span class="logo">
-    <a href="index#catalog">
+    <a href="#catalog">
       Check out our plants!
     </a>
   </span>
@@ -74,12 +69,5 @@ require "includes/layouts/header.php";
 
 <?php
 require "includes/layouts/catalog.php";
-?>
-
-<br /><br />
-<br /><br />
-<br /><br />
-
-<?php
 require "includes/layouts/footer.php";
 ?>

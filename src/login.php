@@ -34,7 +34,14 @@ require "includes/layouts/header.php";
               Your password is not correct try again.
             </p>';
         }
-        
+
+        if ($_GET["error"] == "notloggedin") {
+            echo '
+            <p style="color: red;">
+              Login before you put <br /> something in your cart.
+            </p>';
+        }
+
     }
     ?>
 
@@ -54,7 +61,6 @@ require "includes/layouts/header.php";
        </p>
 
       <br />
-      <br />
 
       <button form="login" class="btn" type="submit" name="submit">
         Login.
@@ -64,6 +70,8 @@ require "includes/layouts/header.php";
 
   </div>
 </div>
+
+<br />
 
 <?php
 require "includes/layouts/footer.php";

@@ -71,7 +71,6 @@ require "includes/layouts/header.php";
       <input type="password" name="pwd-repeat" placeholder="Repeat your password.">
 
       <br />
-      <br />
 
       <button form="register" class="btn" type="submit" name="submit">
         Register.
@@ -82,7 +81,6 @@ require "includes/layouts/header.php";
   </div>
 </div>
 
-<br />
 <br />
 
 <?php

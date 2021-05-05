@@ -3,7 +3,6 @@
   --text-color: #013237;
   --standard-bg-color: #eaf9e7;
   --secondary-bg-color: #c0e6ba;
-  --primary-bg-color: #4ca771;
 }
 
 * {
@@ -91,9 +90,10 @@ header {
 .container {
   display: grid;
   grid-template-columns: 2fr 2fr;
+  margin-bottom: 50px;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1200px) {
   .container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -133,7 +133,7 @@ header {
   background-color: transparent;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .column .cards .content-card-one .content-image {
     position: absolute;
     top: 120px;
@@ -159,6 +159,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
+  margin-bottom: 100px;
 }
 
 @media only screen and (max-width: 1600px) {
@@ -212,13 +213,11 @@ header {
   background-color: transparent;
 }
 
-/* temporary image fix */
 @media only screen and (max-width: 600px) {
   .item-column .item-cards .item-content .content-image {
-    position: absolute;
-    top: -75px;
-    right: 10px;
-    width: 0px;
+    position: static;
+    width: 100%;
+    padding-bottom: 25px;
     background-color: transparent;
   }
 }

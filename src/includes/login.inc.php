@@ -4,13 +4,12 @@ require_once 'functions.inc.php';
 
 if (isset($_POST["submit"])) {
 
-    $email = $_POST["email"];
-    $pwd = $_POST["psw"];
+  $email = $_POST["email"];
+  $pwd = $_POST["psw"];
 
-    loginUser($conn, $email, $pwd);
+  loginUser($conn, $email, $pwd);
 
 } else {
-    header("location: ../login");
-    exit();
-    
+  header("location: ../login");
+  exit();
 }
