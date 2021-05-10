@@ -5,8 +5,8 @@ I tried to make a website that has all the functions a e-commerce website has.
 
 ## A list of things that i need to fix.
 
-- ✓ Better mobile support (proper image scaling and proper text scaling).
-- ✓ Better security.
+- [x] Better mobile support (proper image scaling and proper text scaling).
+- [x] Better security.
 
 ## Database connection.
 
