@@ -25,7 +25,7 @@
         </p>
 
         <br /><br />
-        <img class="content-image" src="assets\image\plant3.png" alt="Yucca.">
+        <img class="content-image" src="https://cdn.shopify.com/s/files/1/0761/9483/products/scindapsus-pictus-15-sierpot.png?v=1627917002" alt="">
 
         <a class="btn" href="#catalog">
           Start shopping.
@@ -61,9 +61,42 @@
 <header>
   <span class="logo">
     <a href="#catalog">
-      Check out our plants!
+      check out our plants!
     </a>
   </span>
 </header>
+
+<div id="catalog" class="item-container">
+
+@foreach ($plants as $plant)
+
+<div class="item-column">
+  <div class="item-cards">
+    <div class="item-content">
+
+      <img class="content-image" src="{{ $plant->image }}" alt="Zamioculcas.">
+
+      <h4>
+        {{ $plant->name }}
+      </h4>
+
+      <p>
+        {!! $plant->bio !!}
+      </p>
+
+      <br />
+      <br />
+      
+  <a class="btn" href="">
+    View plant.
+  </a>
+
+  </div>
+</div>
+</div>
+
+@endforeach
+
+</div>
 
 @endsection

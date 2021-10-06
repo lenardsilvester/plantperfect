@@ -16,6 +16,10 @@ class CreatePlantsTable extends Migration
         Schema::create('plants', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->string('bio');
+            $table->string('image');
+            $table->string('price');
         });
     }
 

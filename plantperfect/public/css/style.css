@@ -1,8 +1,9 @@
 :root {
     --font-family: 'poppins', sans-serif;
+    --font-family-alt: 'Libre Baskerville', serif;
     --text-color: #013237;
-    --standard-bg-color: #eaf9e7;
-    --secondary-bg-color: #c0e6ba;
+    --standard-bg-color: white;
+    --secondary-bg-color: #f7faf7;
   }
   
   * {
@@ -22,21 +23,25 @@
     flex-direction: column;
   }
   
-  p, h4, h5, h6{
+  p, h4, h5, h6 {
     font-family: var(--font-family);
     background-color: transparent;
   }
-  
+
   span {
     font-weight: bold;
     font-size: 25px;
   }
   
   header a {
-    font-family: var(--font-family);
     font-weight: 500;
     text-decoration: none;
     color: var(--text-color);
+  }
+
+  header span {
+    font-family: var(--font-family-alt);
+    font-weight: bold;
   }
   
   .bi {
@@ -53,6 +58,7 @@
   }
   
   .nav-links {
+    font-family: var(--font-family-alt);
     list-style: none;
     font-size: 15px;
   }
@@ -231,8 +237,8 @@
     font-size: 16px;
     padding: 9px 25px;
     text-decoration: none;
-    background-color: var(--standard-bg-color);
-    color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--standard-bg-color);
     border: none;
     cursor: pointer;
     transition: all 0.2s ease 0s;
@@ -240,8 +246,8 @@
   
   .btn:hover {
     font-size: 18px;
-    background-color: var(--text-color);
-    color: var(--standard-bg-color);
+    background-color: var(--standard-bg-color);
+    color: var(--text-color);
   }
   
   .delete-btn {
@@ -361,7 +367,7 @@
   .footer {
     color: var(--text-color);
     text-align: center;
-    background-color: var(--secondary-bg-color);
+    background-color: var(--standard-bg-color);
     margin-top: auto;
     padding: 20px;
     width: 100%;
