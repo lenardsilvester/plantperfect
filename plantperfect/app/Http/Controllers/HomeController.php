@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Plants;
 use Illuminate\Http\Request;
-use DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $plants = DB::table('plants')->get();
+        $plants = Plants::all();
 
-        return view('welcome', ['plants' => $plants]);
+        return view('welcome', [
+            'plants' => $plants
+        ]);
     }
 
 }

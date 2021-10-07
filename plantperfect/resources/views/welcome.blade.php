@@ -74,7 +74,7 @@
   <div class="item-cards">
     <div class="item-content">
 
-      <img class="content-image" src="{{ $plant->image }}" alt="Zamioculcas.">
+      <img class="content-image" src="{{ $plant->image }}" alt="{{ $plant->name }}">
 
       <h4>
         {{ $plant->name }}
@@ -87,8 +87,8 @@
       <br />
       <br />
       
-  <a class="btn" href="">
-    View plant.
+  <a class="btn" href="{{ route('plant', $plant->id) }}">
+    View {{ $plant->name }}
   </a>
 
   </div>

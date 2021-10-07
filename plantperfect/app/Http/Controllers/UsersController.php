@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
-    // get method
     public function index()
     {
         return view('users.index');
