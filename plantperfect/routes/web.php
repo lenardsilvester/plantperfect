@@ -14,3 +14,6 @@ Route::post('/login', [App\Http\Controllers\LoginController::class, 'authenticat
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('user.logout');
 
 Route::get('/plant/{id}', [App\Http\Controllers\PlantController::class, 'show'])->name('plant')->middleware('auth');
+
+Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart')->middleware('auth');
+Route::post('/cart', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store')->middleware('auth');

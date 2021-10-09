@@ -12,10 +12,30 @@
             <br />
             <br />
 
-            <a class="btn" href="">Add to cart ${{ $plant->price }}.</a>      
+            <form action="{{ route('cart.store') }}" method="post">
+              @csrf
+              <input type="hidden" name="plant_id" value="{{ $plant->id }}">
+
+              <button type="submit" class="btn">Add to cart &euro;{{ $plant->price }}.</button>
+            </form>
+   
         </div>
     </div>
 </div>
+
+<header>
+    <span class="logo">
+      <a href="#catalog">
+      </a>
+    </span>
+</header>
+
+  <header>
+    <span class="logo">
+      <a href="#catalog">
+      </a>
+    </span>
+  </header>
 
 <header>
     <span class="logo">

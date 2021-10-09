@@ -28,6 +28,10 @@
     background-color: transparent;
   }
 
+  b {
+    background-color: inherit;
+  }
+
   span {
     font-weight: bold;
     font-size: 25px;
