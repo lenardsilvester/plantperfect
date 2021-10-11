@@ -1,6 +1,6 @@
 :root {
     --font-family: 'poppins', sans-serif;
-    --font-family-alt: 'Libre Baskerville', serif;
+    --font-family-alt: 'poppins', serif;
     --text-color: #013237;
     --standard-bg-color: white;
     --secondary-bg-color: #f7faf7;
@@ -167,15 +167,15 @@
   
   .item-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     margin-bottom: 100px;
   }
   
   @media only screen and (max-width: 1600px) {
     .item-container {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
     }
   }
   
@@ -196,7 +196,7 @@
   
   .item-column .item-cards {
     height: 100%;
-    width: 80%;
+    width: 85%;
     padding: 10px;
     margin: 25px;
     background-color: var(--secondary-bg-color);
@@ -295,18 +295,18 @@
   }
   
   .login-container .login-form form {
-    background-color: var(--secondary-bg-color);
+    background-color: inherit;
   }
   
   .login-container .login-form p {
     font-size: 15px;
   }
   
-  .login-container .login-form input {
+  .login-form input {
     font-family: var(--font-family);
     text-align: center;
     color: var(--text-color);
-    background-color: var(--secondary-bg-color);
+    background-color: inherit;
     margin: 20px;
     border: none;
     border-bottom: 1px solid var(--text-color);

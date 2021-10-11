@@ -16,7 +16,7 @@
               @csrf
               <input type="hidden" name="plant_id" value="{{ $plant->id }}">
 
-              <button type="submit" class="btn">Add to cart &euro;{{ $plant->price }}.</button>
+              <button type="submit" class="btn"><i class="bi bi-cart-plus-fill"></i> &nbsp;&nbsp;&nbsp;Add to cart &euro;{{ $plant->price }}.</button>
             </form>
    
         </div>
@@ -40,7 +40,7 @@
 <header>
     <span class="logo">
       <a href="#catalog">
-        check out more plants!
+        <i class="bi bi-collection-fill"></i> &nbsp;&nbsp;Check some more plants!
       </a>
     </span>
   </header>
@@ -62,12 +62,18 @@
         <p>
           {!! $item->bio !!}
         </p>
+
+        <br />
+
+        <p>
+            <i class="bi bi-tag-fill"></i> &nbsp;&nbsp;&nbsp;Price &bull; &euro;<b>{{ $plant->price }}</b>.
+        </p>
   
         <br />
         <br />
         
     <a class="btn" href="{{ route('plant', $item->id) }}">
-      View {{ $item->name }}
+      <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;{{ $item->name }}
     </a>
   
     </div>

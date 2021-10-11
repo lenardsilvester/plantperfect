@@ -14,6 +14,10 @@
             <br />
             <br />
 
+            <p>
+                &nbsp;
+            </p>
+
             <a class="btn" href="home">
                 Go back to shopping.
             </a>
@@ -23,19 +27,19 @@
             
             @if (count($cart) > 0)
                 <tr>
-                    <th>Plant</th>
-                    <th>Price</th>
+                    <th>Plant. &nbsp;&nbsp;&nbsp;</th>
+                    <th>Price. &nbsp;&nbsp;&nbsp;</th>
                 </tr>
             @endif
 
 @foreach ($cart as $item)
 <tr>
     <td>
-        <b>{{ $item->name }}</b>
+        <b>{{ $item->name }}</b> &nbsp;&nbsp;&nbsp;
     </td>
 
     <td>
-        &euro; {{ $item->price }}
+        &euro; {{ $item->price }} &nbsp;&nbsp;&nbsp;
     </td>
 
     <td>
@@ -44,7 +48,7 @@
         <input type="hidden" name="cart_id" value="{{ $item->id }}" />
 
         <button type="submit" class="delete-btn">
-            Delete plant.
+            <i class="bi bi-trash-fill"></i>
         </button>
 
         </form>
@@ -60,9 +64,14 @@
             <br />
 
             <a class="btn" href="home">
-                Go to checkout.
+                <i class="bi bi-cart-check-fill"></i> &nbsp;&nbsp;&nbsp;Go to checkout.
             </a>
+
         @endif
+
+        <p>
+            &nbsp;
+        </p>
 
     </div>
 </div>
@@ -70,7 +79,7 @@
 <header>
     <span class="logo">
         <a href="#catalog">
-            check out more of our plants!
+            <i class="bi bi-collection-fill"></i> &nbsp;&nbsp;Check some more plants!
         </a>
     </span>
 </header>
@@ -92,12 +101,18 @@
         <p>
           {!! $plant->bio !!}
         </p>
+
+        <br />
+
+        <p>
+            <i class="bi bi-tag-fill"></i> &nbsp;&nbsp;&nbsp;Price &bull; &euro;<b>{{ $plant->price }}</b>.
+        </p>
   
         <br />
         <br />
         
     <a class="btn" href="{{ route('plant', $plant->id) }}">
-      View {{ $plant->name }}
+        <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;{{ $plant->name }}
     </a>
   
     </div>

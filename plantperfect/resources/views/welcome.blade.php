@@ -10,13 +10,13 @@
 
         @auth
         <h4>
-          Welcome back {{ Auth::user()->name }}.
+          Welcome {{ Auth::user()->name }}.
         </h4>
         @endauth
 
         @guest
         <h4>
-          Welcome to plantperfect.
+          Welcome to Plantperfect.
         </h4>
         @endguest
 
@@ -28,7 +28,7 @@
         <img class="content-image" src="https://cdn.shopify.com/s/files/1/0761/9483/products/scindapsus-pictus-15-sierpot.png?v=1627917002" alt="">
 
         <a class="btn" href="#catalog">
-          Start shopping.
+          <i class="bi bi-cart-fill"></i> &nbsp;&nbsp;&nbsp;Start shopping.
         </a>
 
       </div>
@@ -44,13 +44,13 @@
         </h4>
 
         <p>
-          we at plantperfect want to make living rooms and offices literally green with the most beautiful plants.
+          we at Plantperfect want to make living rooms and offices literally green with the most beautiful plants.
         </p>
 
         <br /><br />
 
         <a class="btn" href="#catalog">
-          Check our catalog.
+          <i class="bi bi-collection-fill"></i> &nbsp;&nbsp;&nbsp;Check our catalog.
         </a>
 
       </div>
@@ -61,7 +61,7 @@
 <header>
   <span class="logo">
     <a href="#catalog">
-      check out our plants!
+      <i class="bi bi-collection-fill"></i> &nbsp;&nbsp;Check out our plants!
     </a>
   </span>
 </header>
@@ -85,10 +85,16 @@
       </p>
 
       <br />
+
+      <p>
+        <i class="bi bi-tag-fill"></i> &nbsp;&nbsp;&nbsp;Price &bull; &euro;<b>{{ $plant->price }}</b>.
+      </p>
+
+      <br />
       <br />
       
   <a class="btn" href="{{ route('plant', $plant->id) }}">
-    View {{ $plant->name }}
+    <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;{{ $plant->name }}
   </a>
 
   </div>

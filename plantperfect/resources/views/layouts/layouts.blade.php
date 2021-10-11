@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <title>plantperfect</title>
+    <title>plantperfect.</title>
 
     <!-- meta data -->
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <meta property="og:description" content="&copy; {{ date('Y') }} - lenardsilvester." />
 
     <!-- icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 
     <!-- css stylesheets -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
@@ -36,20 +36,20 @@
 
           <span class="logo">
             <a href="{{ route('home') }}">
-              <b>plantperfect.</b>
+              <i class="bi bi-stars"></i> <b>Plantperfect.</b>
             </a>
           </span>
   
           <li>
             <a class="left" href="{{ route('home') }}#catalog">
-              catalog
+              Catalog
             </a>
           </li>
 
           @auth
           <li>
             <a class="left" href="{{ route('user.logout') }}">
-              logout
+              Logout
             </a>
           </li>
           @endauth
@@ -57,13 +57,13 @@
           @guest
           <li>
             <a class="left" href="{{ route('register') }}">
-              register
+              Register
             </a>
           </li>
 
           <li>
             <a class="left" href="{{ route('login') }}">
-              login
+              Login
             </a>
           </li>
           @endguest
@@ -72,11 +72,23 @@
       </nav>
 
       <ul class="nav-links">
+
+        <li>
+          <div class="login-form">
+            <form action="{{ route('search') }}" method="post">
+              @csrf
+              <i class="bi bi-search"></i>
+              <input type="search" name="query" class="search-box" placeholder="Search plants...">
+            </form>
+          </div>
+        </li>
+
         <li>
           <a class="left" href="cart">
             <i class="bi bi-cart"></i>
           </a>
         </li>
+
       </ul>
 
     </header>
