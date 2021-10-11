@@ -10,7 +10,7 @@
 
         @auth
         <h4>
-          Welcome back <i class="bi bi-person-fill"></i> {{ Auth::user()->name }}
+          Welcome back {{ Auth::user()->name }}.
         </h4>
         @endauth
 

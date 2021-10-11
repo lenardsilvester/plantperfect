@@ -13,7 +13,7 @@ class CartController extends Controller
     public function index()
     {
         $cart = DB::table('plants')
-                ->select('plants.name', 'plants.price')
+                ->select('plants.name', 'plants.price', 'cart.id')
                 ->join('cart', 'plants.id', '=', 'cart.plant_id')
                 ->where('user_id', '=', Auth::user()->id)
                 ->get();
@@ -44,6 +44,19 @@ class CartController extends Controller
             'user_id' => Auth::user()->id,
         ]);
 
+        return redirect()->route('cart');
+    }
+
+    public function delete(Request $request)
+    {
+        $this->validate($request, [
+            'cart_id' => 'required|max:255',
+        ]);
+
+        $delete = DB::table('cart')
+                  ->where('id', '=', $request->cart_id)
+                  ->delete();
+                  
         return redirect()->route('cart');
     }
 }

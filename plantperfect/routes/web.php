@@ -17,3 +17,5 @@ Route::get('/plant/{id}', [App\Http\Controllers\PlantController::class, 'show'])
 
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart')->middleware('auth');
 Route::post('/cart', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store')->middleware('auth');
+
+Route::post('/delete', [App\Http\Controllers\CartController::class, 'delete'])->name('cart.delete')->middleware('auth');

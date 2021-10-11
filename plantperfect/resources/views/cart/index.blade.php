@@ -5,12 +5,28 @@
 <div class="cart-container">
     <div class="cart-content">
         <h4>Your shopping cart.</h4>
-  
+
+        @if (count($cart) < 1)
+            <br />
+
+            <p>Your cart is <b>empty</b>.</p>
+
+            <br />
+            <br />
+
+            <a class="btn" href="home">
+                Go back to shopping.
+            </a>
+        @endif
+
         <table>
-            <tr>
-                <th>Plant</th>
-                <th>Price</th>
-            </tr>
+            
+            @if (count($cart) > 0)
+                <tr>
+                    <th>Plant</th>
+                    <th>Price</th>
+                </tr>
+            @endif
 
 @foreach ($cart as $item)
 <tr>
@@ -23,11 +39,12 @@
     </td>
 
     <td>
-        <form id="" action="" method="post">
-        <input type="hidden" name="cart-id" value="" />
+        <form action="{{ route('cart.delete') }}" method="post">
+            @csrf
+        <input type="hidden" name="cart_id" value="{{ $item->id }}" />
 
-        <button class="delete-btn" form="" type="submit" name="submit">
-            Delete.
+        <button type="submit" class="delete-btn">
+            Delete plant.
         </button>
 
         </form>
@@ -37,13 +54,15 @@
 
         </table>
 
-        <p>Total price = <b>&euro; {{ $total_price->total }}</b>.</p>
+        @if (count($cart) > 0)
+            <p>Total price = <b>&euro; {{ $total_price->total }}</b>.</p>
 
-        <br />
+            <br />
 
-        <a class="btn" href="home">
-            Go to checkout.
-        </a>
+            <a class="btn" href="home">
+                Go to checkout.
+            </a>
+        @endif
 
     </div>
 </div>
