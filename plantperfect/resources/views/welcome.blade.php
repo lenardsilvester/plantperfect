@@ -50,7 +50,7 @@
         <br /><br />
 
         <a class="btn" href="#catalog">
-          <i class="bi bi-collection-fill"></i> &nbsp;&nbsp;&nbsp;Check our catalog.
+          <i class="bi bi-collection-fill mobile"></i> &nbsp;&nbsp;&nbsp;Check our catalog.
         </a>
 
       </div>
@@ -94,7 +94,7 @@
       <br />
       
   <a class="btn" href="{{ route('plant', $plant->id) }}">
-    <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;{{ $plant->name }}
+    <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;View plant.
   </a>
 
   </div>

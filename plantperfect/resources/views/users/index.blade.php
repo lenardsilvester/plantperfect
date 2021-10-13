@@ -10,6 +10,11 @@
   
       <br />
 
+      @error('status')
+            <p><i class="bi bi-exclamation-circle-fill"></i> {{ $message }}</p>
+            <br />
+      @enderror
+
       <form id="login" action="{{ route('user.authenticate') }}" method="post">
         @csrf
 
@@ -23,6 +28,7 @@
         <input type="password" name="password" placeholder="Your password.">
         @error('password')
             <p><i class="bi bi-exclamation-circle-fill"></i> {{ $message }}</p>
+            <br />
         @enderror
   
         <p>

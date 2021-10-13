@@ -73,7 +73,7 @@
         <br />
         
     <a class="btn" href="{{ route('plant', $item->id) }}">
-      <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;{{ $item->name }}
+      <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;View plant.
     </a>
   
     </div>

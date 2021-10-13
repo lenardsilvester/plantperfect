@@ -19,7 +19,8 @@ class PlantController extends Controller
     }
 
     public function search(Request $request)
-    {       
+    {   
+        // this function receives a search qeury then searches for the matching rows.  
         $result = DB::table('plants')
                   ->where(\DB::raw('concat(name, price)'), 'LIKE', '%' . $request->input('query') . '%')
                   ->get();

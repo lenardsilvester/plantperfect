@@ -12,14 +12,16 @@ class CartController extends Controller
 {
     public function index()
     {
+        // a simple join statement to find all the plants based on the plant_id in the database.
         $cart = DB::table('plants')
                 ->select('plants.name', 'plants.price', 'cart.id')
                 ->join('cart', 'plants.id', '=', 'cart.plant_id')
                 ->where('user_id', '=', Auth::user()->id)
                 ->get();
 
+        // this qeury sums up all the prices of the plants in your cart.      
         $total_price = DB::table('plants')
-            	 ->select(\DB::raw('SUM(plants.price) as total'))
+            	 ->select(\DB::raw('SUM(plants.price) AS total'))
                  ->join('cart', 'plants.id', '=', 'cart.plant_id')
                  ->where('user_id', '=', Auth::user()->id)
                  ->first();
@@ -35,6 +37,7 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
+        // this function adds a item to your cart by stroing the plant_id and the user_id.
         $this->validate($request, [
             'plant_id' => 'required|max:255',
         ]);
@@ -49,6 +52,7 @@ class CartController extends Controller
 
     public function delete(Request $request)
     {
+        // this function deletes a item from your cart.
         $this->validate($request, [
             'cart_id' => 'required|max:255',
         ]);

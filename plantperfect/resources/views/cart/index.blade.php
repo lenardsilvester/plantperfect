@@ -63,7 +63,7 @@
 
             <br />
 
-            <a class="btn" href="home">
+            <a class="btn" href="{{ route('user.logout') }}">
                 <i class="bi bi-cart-check-fill"></i> &nbsp;&nbsp;&nbsp;Go to checkout.
             </a>
 
@@ -112,7 +112,7 @@
         <br />
         
     <a class="btn" href="{{ route('plant', $plant->id) }}">
-        <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;{{ $plant->name }}
+        <i class="bi bi-caret-right-fill"></i> &nbsp;&nbsp;&nbsp;View plant.
     </a>
   
     </div>

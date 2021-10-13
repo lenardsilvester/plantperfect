@@ -13,11 +13,6 @@ class UsersController extends Controller
         return view('users.index');
     }
 
-    public function show()
-    {
-        return view('users.show');
-    }
-
     public function create()
     {
         return view('users.create');
@@ -25,6 +20,7 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
+        // this function stores the user and then attempts to log the user in.
         $this->validate($request, [
             'name'=>'required|max:255',
             'username'=>'required|max:255',

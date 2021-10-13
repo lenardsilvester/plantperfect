@@ -9,6 +9,7 @@ class LoginController extends Controller
 {
     public function authenticate(Request $request)
     {
+        // this function attempts to login with the given credentials.
         $this->validate($request, [
             'email'=>'required|email',
             'password'=>'required',

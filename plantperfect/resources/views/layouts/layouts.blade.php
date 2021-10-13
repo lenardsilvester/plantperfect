@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="lenardsilvester">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#c0e6ba">
+    <meta name="theme-color" content="#f7faf7">
     <meta property="og:site_name" content="plantperfect" />
     <meta property="og:title" content="plantperfect webshop." />
     <meta property="og:url" content="https://lenardsilvester.nl/" />
@@ -29,6 +29,7 @@
   </head>
 
   <body>
+    
     <header>
   
       <nav>
@@ -36,19 +37,19 @@
 
           <span class="logo">
             <a href="{{ route('home') }}">
-              <i class="bi bi-stars"></i> <b>Plantperfect.</b>
+              <i class="bi bi-stars mobile"></i> <b>Plantperfect.</b>
             </a>
           </span>
-  
+
           <li>
-            <a class="left" href="{{ route('home') }}#catalog">
+            <a class="left mobile" href="{{ route('home') }}#catalog">
               Catalog
             </a>
           </li>
 
           @auth
           <li>
-            <a class="left" href="{{ route('user.logout') }}">
+            <a class="left mobile" href="{{ route('user.logout') }}">
               Logout
             </a>
           </li>
@@ -56,13 +57,13 @@
 
           @guest
           <li>
-            <a class="left" href="{{ route('register') }}">
+            <a class="left mobile" href="{{ route('register') }}">
               Register
             </a>
           </li>
 
           <li>
-            <a class="left" href="{{ route('login') }}">
+            <a class="left mobile" href="{{ route('login') }}">
               Login
             </a>
           </li>
@@ -74,7 +75,7 @@
       <ul class="nav-links">
 
         <li>
-          <div class="login-form">
+          <div class="login-form mobile">
             <form action="{{ route('search') }}" method="post">
               @csrf
               <i class="bi bi-search"></i>
@@ -84,7 +85,7 @@
         </li>
 
         <li>
-          <a class="left" href="cart">
+          <a class="left" href="{{ route('cart') }}">
             <i class="bi bi-cart"></i>
           </a>
         </li>
